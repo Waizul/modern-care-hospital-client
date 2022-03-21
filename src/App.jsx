@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Menubar from "./components/Menubar";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 const NavContainer = styled.div`
   position: relative;
@@ -23,6 +24,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );
