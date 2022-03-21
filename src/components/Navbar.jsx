@@ -120,7 +120,7 @@ const Navbar = ({ open, setOpen }) => {
         <Center>
           <NavList>
             {navLinks.map((a) => (
-              <NavItem>
+              <NavItem key={a.id}>
                 <NavLink to={a.path}>{a.title}</NavLink>
               </NavItem>
             ))}
