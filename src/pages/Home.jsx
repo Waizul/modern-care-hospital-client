@@ -1,4 +1,5 @@
 import React from 'react'
+import Appointment from '../components/Appointment'
 import Banner from '../components/Banner'
 import Contact from '../components/Contact'
 import Doctors from '../components/Doctors'
@@ -10,6 +11,7 @@ const Home = () => {
    <Banner/>
    <Services/>
    <Doctors/>
+   <Appointment/>
    <Contact/>
    </>
   )
