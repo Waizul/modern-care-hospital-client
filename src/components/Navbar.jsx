@@ -63,8 +63,11 @@ const NavItem = styled.li`
 `;
 const Right = styled.div`
   flex: 1;
-  align-self: center;
-  margin-left: 3%;
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 1rem;
 ${mobile({display:'none'})}
 `;
 

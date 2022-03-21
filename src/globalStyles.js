@@ -28,9 +28,10 @@ width: max-content;
 `
 export const Button = styled.button`
   /* display: inline-block; */
-  min-width: ${(props) => (props.primary ? "100px" : "100px")};
-  margin-right: 20px;
-  margin-top: 10px;
+  /* min-width: ${(props) => (props.primary ? "100px" : "max-content")}; */
+  width: max-content;
+  /* margin-right: 20px; */
+  /* margin-top: 10px; */
   padding: 10px 30px;
   font-size: ${(props) => (props.primary ? "16px" : "16px")};
   border: none;

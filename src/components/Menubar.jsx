@@ -38,7 +38,8 @@ width: 80%;
 cursor: pointer;
 
 &:hover{
-    font-weight: bold;
+    /* color: red; */
+    font-weight: 500;
 }
 `
 const Menubar = ({open, setOpen}) => {
