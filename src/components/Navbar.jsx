@@ -6,7 +6,7 @@ import { mobile } from "../responsive";
 const Container = styled.nav`
   width: 100%;
   height: 60px;
-  background-color: rgb(28,105,63);
+  background-color: rgb(28, 105, 63);
   position: fixed;
   display: flex;
   align-items: center;
@@ -68,7 +68,7 @@ const Right = styled.div`
   align-items: center;
   gap: 1rem;
   margin-left: 1rem;
-${mobile({display:'none'})}
+  ${mobile({ display: "none" })}
 `;
 
 // const IconContainer = styled.div``;
@@ -127,8 +127,12 @@ const Navbar = ({ open, setOpen }) => {
           </NavList>
         </Center>
         <Right>
+          <Link to="/register">
             <Button>Register</Button>
+          </Link>
+          <Link to="/login">
             <Button primary>Log In</Button>
+          </Link>
         </Right>
       </Wrapper>
       <HamburgerMenu open={open} onClick={() => setOpen(!open)}>

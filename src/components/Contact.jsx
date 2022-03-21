@@ -114,7 +114,7 @@ const Contact = () => {
     <Wrapper>
       <Left>
        <Map>
-           <iframe width="90%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=dhanmondi&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+           <iframe width="90%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=dhanmondi&t=&z=15&ie=UTF8&iwloc=&output=embed" scrolling="no"></iframe>
        </Map>
        <InfoContainer>
            <InfoWrapper>
