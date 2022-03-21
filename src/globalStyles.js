@@ -22,9 +22,11 @@ export const A = styled.a`
 
 export const Heading = styled.h1`
 color: olivedrab;
-font-size: 40px;
+font-size: 35px;
 border-bottom: 2px solid olive;
 width: max-content;
+margin: 0 auto;
+margin-bottom: 50px;
 `
 export const Button = styled.button`
   /* display: inline-block; */
