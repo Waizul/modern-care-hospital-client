@@ -62,7 +62,7 @@ sendEmailVerification(auth.currentUser).then(()=>{})
       .then((result) => {
         // Signed in
         const signedUser = result.user;
-        saveUser(signedUser.email, signedUser.displayName, "put");
+        saveUser(signedUser.displayName, signedUser.email, signedUser?.password, "put");
         navigate(from);
         setAuthError("");
       })
@@ -78,7 +78,7 @@ sendEmailVerification(auth.currentUser).then(()=>{})
       .then((result) => {
         const signedUser = result.user;
         setUser(signedUser);
-        saveUser(signedUser.email, signedUser.displayName, "put");
+        saveUser(signedUser.displayName, signedUser.email,  signedUser?.password, "put");
         navigate(from);
       })
       .catch((error) => {
@@ -110,18 +110,19 @@ sendEmailVerification(auth.currentUser).then(()=>{})
   }, [auth]);
 
   //save user to mongodb
-  const saveUser = (displayName, email, password, method) => {
+  const saveUser = (displayName, email,password, method) => {
     const user = { displayName, email, password };
     console.log(user);
-    fetch("https://still-ocean-05548.herokuapp.com/user", {
+    fetch("http://localhost:5000/users", {
       method: method,
       headers: {
         "content-type": "application/json",
       },
       body: JSON.stringify(user),
-    }).then();
+    }).then(res=>res.json()).then(data=>console.log(data));
   };
 
+  
   return {
     user,
     register,

@@ -139,7 +139,9 @@ const Navbar = ({ open, setOpen }) => {
         <Right>
           {
             user.email ? <>
-<Avatar src={user.photoURL}alt='User Photo' />
+            { user.photoURL && 
+<Avatar src={user.photoURL} alt='' />
+            }
             <span>{user.displayName}</span>
             <Button onClick={logOut}>Log out</Button>
             </>:

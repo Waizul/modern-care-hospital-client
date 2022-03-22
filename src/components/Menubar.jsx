@@ -86,8 +86,9 @@ const handleLogout = () =>{
         {
           user.email ? <>
            <AvatarContainer>
-
-          <Avatar src={user.photoURL}alt='User Photo' />
+{ user.photoURL && 
+          <Avatar src={user.photoURL}alt='' />
+}
                       <span>{user.displayName}</span>
           </AvatarContainer> 
                       <Button onClick={handleLogout}>Log out</Button>
