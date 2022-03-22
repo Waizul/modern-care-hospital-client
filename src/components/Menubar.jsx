@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { navLinks } from "../data";
 import { Button, Link } from "../globalStyles";
+import useAuth from "../hooks/useAuth";
 import { mobile } from "../responsive";
 
 const Container = styled.nav`
@@ -44,7 +45,33 @@ const NavItem = styled.li`
     font-weight: 500;
   }
 `;
+const AvatarContainer = styled.div`
+display: flex;
+gap: 5px;
+color: white;
+margin-bottom: 10px;
+`
+const Avatar = styled.img`
+width: 30px;
+height: 30px;
+border-radius: 50%;
+object-fit: cover;
+`
+const LoginContainer = styled.div`
+display: flex;
+flex-direction: column;
+gap: 10px;
+` 
+
 const Menubar = ({ open, setOpen }) => {
+
+const {user, logOut} = useAuth()
+
+const handleLogout = () =>{
+  logOut()
+  setOpen(!open)
+}
+
   return (
     <Container open={open}>
       <Wrapper>
@@ -55,12 +82,29 @@ const Menubar = ({ open, setOpen }) => {
             </NavItem>
           ))}
         </NavList>
+
+        {
+          user.email ? <>
+           <AvatarContainer>
+
+          <Avatar src={user.photoURL}alt='User Photo' />
+                      <span>{user.displayName}</span>
+          </AvatarContainer> 
+                      <Button onClick={handleLogout}>Log out</Button>
+          </>
+          :
+<>
+<LoginContainer>
+
         <Link to="/register">
-          <Button>Register</Button>
+          <Button onClick={()=>setOpen(!open)}>Register</Button>
         </Link>
         <Link to="/login">
-          <Button primary>Log In</Button>
+          <Button primary onClick={()=>setOpen(!open)}>Log In</Button>
         </Link>
+</LoginContainer>
+</>
+}
       </Wrapper>
     </Container>
   );

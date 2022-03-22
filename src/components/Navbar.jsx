@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { navLinks } from "../data";
+import useAuth from '../hooks/useAuth'
 import { A, Button, Link, NavLink } from "../globalStyles";
 import { mobile } from "../responsive";
 
@@ -70,6 +71,12 @@ const Right = styled.div`
   margin-left: 1rem;
   ${mobile({ display: "none" })}
 `;
+const Avatar = styled.img`
+width: 30px;
+height: 30px;
+border-radius: 50%;
+object-fit: cover;
+`
 
 // const IconContainer = styled.div``;
 // const Icon = styled.span`
@@ -105,6 +112,9 @@ const HamburgerMenu = styled.div`
   } ;
 `;
 const Navbar = ({ open, setOpen }) => {
+
+  const {user,logOut} = useAuth()
+  
   return (
     <Container>
       <Wrapper>
@@ -127,12 +137,21 @@ const Navbar = ({ open, setOpen }) => {
           </NavList>
         </Center>
         <Right>
+          {
+            user.email ? <>
+<Avatar src={user.photoURL}alt='User Photo' />
+            <span>{user.displayName}</span>
+            <Button onClick={logOut}>Log out</Button>
+            </>:
+            <>
           <Link to="/register">
             <Button>Register</Button>
           </Link>
           <Link to="/login">
             <Button primary>Log In</Button>
           </Link>
+            </>
+          }
         </Right>
       </Wrapper>
       <HamburgerMenu open={open} onClick={() => setOpen(!open)}>
