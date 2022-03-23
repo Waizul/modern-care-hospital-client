@@ -125,7 +125,7 @@ const Banner = () => {
     };
 
   return (
-    <Container>
+    <Container id='banner'>
     <Arrow direction='left' onClick={() => handleClick('left')}>
           <Icon src={arrowl} alt='left arrow' /> 
         </Arrow>

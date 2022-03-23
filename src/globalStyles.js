@@ -1,20 +1,14 @@
 import styled from "styled-components";
-import { Link as l, NavLink as nlink } from "react-router-dom";
+import { Link as l } from "react-router-dom";
+import {NavHashLink} from 'react-router-hash-link'
 
 export const Link = styled(l)`
   color: inherit;
 `;
 
-export const NavLink = styled(nlink)`
-  color: inherit;
-  /* &.active {
-    border-bottom: 2px solid red;
-  } */
-
-  &:hover{
-    transform: scaleX(1.1);
-  }
-`;
+export const NavLink = styled(NavHashLink)`
+color: inherit;
+`
 
 export const A = styled.a`
   color: inherit;

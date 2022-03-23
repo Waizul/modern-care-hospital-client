@@ -109,7 +109,7 @@ const Text = styled.textarea`
 // `;
 const Contact = () => {
   return (
-    <Container>
+    <Container id='contact'>
         <Heading>Contact Us</Heading>
     <Wrapper>
       <Left>

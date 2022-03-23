@@ -21,7 +21,7 @@ ${tablet({gridTemplateColumns : 'repeat(2, 1fr)',gap:'1rem'  })}
 
 const Doctors = () => {
   return (
-    <Container>
+    <Container id="doctors">
         <Heading>Our Doctors</Heading>
         <Link to ='/doctorsList'>
 

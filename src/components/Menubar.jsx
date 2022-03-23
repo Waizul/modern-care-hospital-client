@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { navLinks } from "../data";
-import { Button, Link } from "../globalStyles";
+import { Button, Link, NavLink } from "../globalStyles";
 import useAuth from "../hooks/useAuth";
 import { mobile } from "../responsive";
 
@@ -77,7 +77,7 @@ const Menubar = ({ open, setOpen }) => {
         <NavList>
           {navLinks.map((a) => (
             <NavItem onClick={() => setOpen(!open)} key={a.id}>
-              <Link to={a.path}>{a.title}</Link>
+              <NavLink to={a.path}>{a.title}</NavLink>
             </NavItem>
           ))}
         </NavList>

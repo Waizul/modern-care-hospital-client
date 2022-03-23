@@ -26,6 +26,7 @@ import ReviewsList from "./pages/dashboard/admin/ReviewsList";
 import MakeAdmin from "./pages/dashboard/admin/MakeAdmin";
 import DiscountsList from "./pages/dashboard/admin/DiscountsList";
 import Appointment from "./pages/Appointment";
+import ScrollToTop from "./components/ScrollToTop";
 
 const NavContainer = styled.div`
   position: relative;
@@ -37,12 +38,14 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
+      <ScrollToTop/>
         <NavContainer>
           <Navbar open={open} setOpen={setOpen} />
           <Menubar open={open} setOpen={setOpen} />
         </NavContainer>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/appointment" element={<UserRoute><Appointment/></UserRoute>} />
           <Route
             path="/services"
             element={
@@ -56,7 +59,7 @@ function App() {
           <Route path="/pathology" element={<Pathology />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="'/appointment" element={<UserRoute><Appointment/></UserRoute>} />
+         
           <Route
             path="/dashboard"
             element={

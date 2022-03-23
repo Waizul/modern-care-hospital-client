@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const PathologyTests = () => {
   return (
-    <Container>
+    <Container id="pathology">
     <Heading>Our Patholgy</Heading>
     <Link to="/pathology">
       <Wrapper>

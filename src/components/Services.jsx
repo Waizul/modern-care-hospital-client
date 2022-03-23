@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
 const Services = () => {
   return (
-    <Container>
+    <Container id="services">
       <Heading>Our Services</Heading>
       <Link to="/services">
         <Wrapper>

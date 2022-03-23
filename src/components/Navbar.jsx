@@ -6,7 +6,7 @@ import { mobile } from "../responsive";
 
 const Container = styled.nav`
   width: 100%;
-  height: 60px;
+  height: 70px;
   background-color: rgb(28, 105, 63);
   position: fixed;
   display: flex;
@@ -29,21 +29,30 @@ const Left = styled.div`
 `;
 
 const LogContainer = styled.div`
-  width: 100px;
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
 `;
 const Logo = styled.span`
-  font-weight: 300;
+width: max-content;
+  font-weight: 400;
   font-size: 16px;
   padding: 0px 4px;
   padding-bottom: 3px;
   border: 1px solid white;
   border-radius: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+justify-content: center;
 `;
 
 const Name = styled.h1`
   margin: 0;
   width: max-content;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   ${mobile({ display: "none" })}
 `;
@@ -70,6 +79,11 @@ const Right = styled.div`
   gap: 1rem;
   margin-left: 1rem;
   ${mobile({ display: "none" })}
+`;
+const AvatarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 const Avatar = styled.img`
   width: 30px;
@@ -120,7 +134,7 @@ const Navbar = ({ open, setOpen }) => {
         <Left>
           <LogContainer>
             <Link to="/">
-              <Logo>MDC</Logo>
+              <Logo>MCH</Logo>
               <Name>Modern Care Hospital</Name>
             </Link>
           </LogContainer>
@@ -139,8 +153,10 @@ const Navbar = ({ open, setOpen }) => {
           {user.email ? (
             <>
               <Link to="/dashboard">
-                {user.photoURL && <Avatar src={user.photoURL} alt="" />}
-                <span>{user.displayName}</span>
+                <AvatarContainer>
+                  {user.photoURL && <Avatar src={user.photoURL} alt="" />}
+                  <span>{user.displayName}</span>
+                </AvatarContainer>
               </Link>
               <Button onClick={logOut}>Log out</Button>
             </>
