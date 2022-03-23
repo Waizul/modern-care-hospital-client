@@ -1,8 +1,14 @@
-import React from 'react'
+import styled from 'styled-components';
+import Doctors from '../components/Doctors'
 
+
+const Container = styled.div`
+position: relative;
+/* top: 70px; */
+`
 const DoctorsList = () => {
   return (
-    <div>DoctorsList</div>
+    <Container><Doctors/></Container>
   )
 }
 

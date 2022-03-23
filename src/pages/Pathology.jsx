@@ -1,8 +1,13 @@
-import React from 'react'
+import styled from 'styled-components';
+import PathologyTests from '../components/PathologyTests'
+
+const Container = styled.div`
+position: relative;
+`
 
 const Pathology = () => {
   return (
-    <div>Pathology</div>
+    <Container><PathologyTests/></Container>
   )
 }
 

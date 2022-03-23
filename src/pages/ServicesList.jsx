@@ -27,6 +27,7 @@ const Wrapper = styled.div`
 const Title = styled.h1`
   text-align: center;
   padding-top: 10px;
+  color: rgb(28,105,63);
 `;
 
 const ServicesList = () => {

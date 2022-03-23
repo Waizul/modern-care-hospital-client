@@ -7,7 +7,7 @@ import Doctor from "./Doctor";
 
 const Container = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  min-height: 95vh;
   padding-top: 100px;
 `;
 
@@ -23,7 +23,7 @@ const Doctors = () => {
   return (
     <Container id="doctors">
         <Heading>Our Doctors</Heading>
-        <Link to ='/doctorsList'>
+        <Link to ='/doctors'>
 
       <Wrapper>
         {doctorsData.map((doctor) => (

@@ -58,11 +58,13 @@ ${laptop({height:'111%'})}
 `
 const Right = styled.div`
   flex: 1;
+  padding: 1rem;
+  padding-top: 0;
 `;
 
 const Form = styled.form`
   padding: 30px;
-  width: 100%;
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
