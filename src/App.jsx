@@ -9,7 +9,6 @@ import Footer from "./components/Footer";
 import AuthProvider from "./context/AuthProvider";
 import Login from "./pages/Login";
 import ServicesList from "./pages/ServicesList";
-import SingleService from "./pages/SingleService";
 import DoctorsList from "./pages/DoctorsList";
 import Pathology from "./pages/Pathology";
 import Register from "./pages/Register";
@@ -43,6 +42,8 @@ function App() {
           <Navbar open={open} setOpen={setOpen} />
           <Menubar open={open} setOpen={setOpen} />
         </NavContainer>
+        <div>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/appointment" element={<UserRoute><Appointment/></UserRoute>} />
@@ -53,8 +54,8 @@ function App() {
                 <ServicesList />
               </UserRoute>
             }
-          />
-          <Route path="/services/:serviceId" element={<SingleService />} />
+            />
+          {/* <Route path="/services/:serviceId" element={<SingleService />} /> */}
           <Route path="/doctors" element={<DoctorsList />} />
           <Route path="/pathology" element={<Pathology />} />
           <Route path="/login" element={<Login />} />
@@ -72,7 +73,7 @@ function App() {
               <Route
                 path="/dashboard/user/appointments"
                 element={<UserAppoitments />}
-              />
+                />
               <Route path="/dashboard/user/review" element={<UserReview />} />
             </Route>
             <Route
@@ -85,22 +86,23 @@ function App() {
               <Route
                 path="/dashboard/admin/AppointmentsList"
                 element={<AppointmentsList />}
-              />
+                />
               <Route
                 path="/dashboard/admin/reviewsList"
                 element={<ReviewsList />}
-              />
+                />
               <Route
                 path="/dashboard/admin/makeAdmin"
                 element={<MakeAdmin />}
-              />
+                />
               <Route
                 path="/dashboard/admin/discountsList"
                 element={<DiscountsList />}
-              />
+                />
             </Route>
           </Route>
         </Routes>
+                </div>
         <Footer />
       </BrowserRouter>
     </AuthProvider>
