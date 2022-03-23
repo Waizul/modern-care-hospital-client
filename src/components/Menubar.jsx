@@ -46,31 +46,30 @@ const NavItem = styled.li`
   }
 `;
 const AvatarContainer = styled.div`
-display: flex;
-gap: 5px;
-color: white;
-margin-bottom: 10px;
-`
+  display: flex;
+  gap: 5px;
+  color: white;
+  margin-bottom: 10px;
+`;
 const Avatar = styled.img`
-width: 30px;
-height: 30px;
-border-radius: 50%;
-object-fit: cover;
-`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+`;
 const LoginContainer = styled.div`
-display: flex;
-flex-direction: column;
-gap: 10px;
-` 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
 
 const Menubar = ({ open, setOpen }) => {
+  const { user, logOut } = useAuth();
 
-const {user, logOut} = useAuth()
-
-const handleLogout = () =>{
-  logOut()
-  setOpen(!open)
-}
+  const handleLogout = () => {
+    logOut();
+    setOpen(!open);
+  };
 
   return (
     <Container open={open}>
@@ -83,29 +82,30 @@ const handleLogout = () =>{
           ))}
         </NavList>
 
-        {
-          user.email ? <>
-           <AvatarContainer>
-{ user.photoURL && 
-          <Avatar src={user.photoURL}alt='' />
-}
-                      <span>{user.displayName}</span>
-          </AvatarContainer> 
-                      <Button onClick={handleLogout}>Log out</Button>
+        {user.email ? (
+          <>
+            <Link to="/dashboard">
+              <AvatarContainer>
+                {user.photoURL && <Avatar src={user.photoURL} alt="" />}
+                <span>{user.displayName}</span>
+              </AvatarContainer>
+            </Link>
+            <Button onClick={handleLogout}>Log out</Button>
           </>
-          :
-<>
-<LoginContainer>
-
-        <Link to="/register">
-          <Button onClick={()=>setOpen(!open)}>Register</Button>
-        </Link>
-        <Link to="/login">
-          <Button primary onClick={()=>setOpen(!open)}>Log In</Button>
-        </Link>
-</LoginContainer>
-</>
-}
+        ) : (
+          <>
+            <LoginContainer>
+              <Link to="/register">
+                <Button onClick={() => setOpen(!open)}>Register</Button>
+              </Link>
+              <Link to="/login">
+                <Button primary onClick={() => setOpen(!open)}>
+                  Log In
+                </Button>
+              </Link>
+            </LoginContainer>
+          </>
+        )}
       </Wrapper>
     </Container>
   );

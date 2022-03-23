@@ -25,6 +25,7 @@ import AppointmentsList from "./pages/dashboard/admin/AppointmentsList";
 import ReviewsList from "./pages/dashboard/admin/ReviewsList";
 import MakeAdmin from "./pages/dashboard/admin/MakeAdmin";
 import DiscountsList from "./pages/dashboard/admin/DiscountsList";
+import Appointment from "./pages/Appointment";
 
 const NavContainer = styled.div`
   position: relative;
@@ -55,6 +56,7 @@ function App() {
           <Route path="/pathology" element={<Pathology />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="'/appointment" element={<UserRoute><Appointment/></UserRoute>} />
           <Route
             path="/dashboard"
             element={

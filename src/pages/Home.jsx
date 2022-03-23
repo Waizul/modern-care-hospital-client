@@ -1,8 +1,7 @@
-import React from 'react'
-import Appointment from '../components/Appointment'
 import Banner from '../components/Banner'
 import Contact from '../components/Contact'
 import Doctors from '../components/Doctors'
+import PathologyTests from '../components/PathologyTests'
 import Services from '../components/Services'
 
 const Home = () => {
@@ -10,8 +9,8 @@ const Home = () => {
    <>
    <Banner/>
    <Services/>
+   <PathologyTests/>
    <Doctors/>
-   <Appointment/>
    <Contact/>
    </>
   )

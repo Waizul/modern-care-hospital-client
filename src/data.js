@@ -101,24 +101,7 @@ export const tableData = [
 ];
 
 export const servicesData = [
-  {
-    id: 1,
-    name: "Ultrasonogram",
-    img: "https://i.ibb.co/DQwJFgc/info-bg.jpg",
-    desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
-  },
-  {
-    id: 2,
-    name: "X-Ray",
-    img: "https://i.ibb.co/DQwJFgc/info-bg.jpg",
-    desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
-  },
-  {
-    id: 3,
-    name: "Blood Test",
-    img: "https://i.ibb.co/DQwJFgc/info-bg.jpg",
-    desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
-  },
+  
   {
     id: 4,
     name: "Cabin",
@@ -138,6 +121,27 @@ export const servicesData = [
     desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
   },
 ];
+
+export const pathologyTests = [
+  {
+    id: 1,
+    name: "Ultrasonogram",
+    img: "https://i.ibb.co/DQwJFgc/info-bg.jpg",
+    desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
+  },
+  {
+    id: 2,
+    name: "X-Ray",
+    img: "https://i.ibb.co/DQwJFgc/info-bg.jpg",
+    desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
+  },
+  {
+    id: 3,
+    name: "Blood Test",
+    img: "https://i.ibb.co/DQwJFgc/info-bg.jpg",
+    desc: "Modern digital mechine ensures high accuracy and proficiency. Do test today with affordable price.",
+  },
+]
 
 export const doctorsData = [
   {

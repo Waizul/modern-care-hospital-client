@@ -10,6 +10,8 @@ export const Container = styled.div`
   height: 50vh;
   margin-top: 300px;
   padding-top: 300px;
+  position: absolute;
+  top: 200px;
 `;
 
 const DashboardHome = () => {

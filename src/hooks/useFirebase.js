@@ -13,6 +13,7 @@ import {
 
 import firebaseAuthentication from "../firebase.config";
 import { useNavigate } from "react-router-dom";
+import { userRequest } from "../requestMethod";
 
 firebaseAuthentication();
 
@@ -110,17 +111,20 @@ sendEmailVerification(auth.currentUser).then(()=>{})
   }, [auth]);
 
   //save user to mongodb
-  const saveUser = (displayName, email,password, method) => {
-    const user = { displayName, email, password };
-    console.log(user);
-    fetch("http://localhost:5000/users", {
-      method: method,
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(user),
-    }).then(res=>res.json()).then(data=>console.log(data));
-  };
+  
+    const saveUser = async(displayName, email,password, method) => {
+      const user = { displayName, email, password };
+      console.log(user);
+      fetch('https://moderncarehospital.herokuapp.com/users', {
+        method: method,
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(user),
+      }).then(res=>res.json()).then(data=>console.log(data));
+    };
+ 
+  
 
   
   return {

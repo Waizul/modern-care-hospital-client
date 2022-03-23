@@ -4,6 +4,7 @@ import arrowl from '../icons/arrowl.png'
 import arrowr from '../icons/arrowr.png'
 import { useState } from 'react';
 import {bannerItems} from '../data'
+import { Link } from '../globalStyles';
 
 const Container = styled.div`
   width: 100vw;
@@ -137,7 +138,9 @@ const Banner = () => {
                     <InfoContainer>
                         <Title>{item.title}</Title>
                         <Desc>{item.desc}</Desc>
-                        <Button>GET AN APPOINTMENT</Button>
+                     <Link to='/appointment'>
+                          <Button>GET AN APPOINTMENT</Button>
+                          </Link>
                     </InfoContainer>
                 </Slide>
             ))}

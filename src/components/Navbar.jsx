@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { navLinks } from "../data";
-import useAuth from '../hooks/useAuth'
+import useAuth from "../hooks/useAuth";
 import { A, Button, Link, NavLink } from "../globalStyles";
 import { mobile } from "../responsive";
 
@@ -72,11 +72,11 @@ const Right = styled.div`
   ${mobile({ display: "none" })}
 `;
 const Avatar = styled.img`
-width: 30px;
-height: 30px;
-border-radius: 50%;
-object-fit: cover;
-`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+`;
 
 // const IconContainer = styled.div``;
 // const Icon = styled.span`
@@ -112,9 +112,8 @@ const HamburgerMenu = styled.div`
   } ;
 `;
 const Navbar = ({ open, setOpen }) => {
+  const { user, logOut } = useAuth();
 
-  const {user,logOut} = useAuth()
-  
   return (
     <Container>
       <Wrapper>
@@ -137,23 +136,24 @@ const Navbar = ({ open, setOpen }) => {
           </NavList>
         </Center>
         <Right>
-          {
-            user.email ? <>
-            { user.photoURL && 
-<Avatar src={user.photoURL} alt='' />
-            }
-            <span>{user.displayName}</span>
-            <Button onClick={logOut}>Log out</Button>
-            </>:
+          {user.email ? (
             <>
-          <Link to="/register">
-            <Button>Register</Button>
-          </Link>
-          <Link to="/login">
-            <Button primary>Log In</Button>
-          </Link>
+              <Link to="/dashboard">
+                {user.photoURL && <Avatar src={user.photoURL} alt="" />}
+                <span>{user.displayName}</span>
+              </Link>
+              <Button onClick={logOut}>Log out</Button>
             </>
-          }
+          ) : (
+            <>
+              <Link to="/register">
+                <Button>Register</Button>
+              </Link>
+              <Link to="/login">
+                <Button primary>Log In</Button>
+              </Link>
+            </>
+          )}
         </Right>
       </Wrapper>
       <HamburgerMenu open={open} onClick={() => setOpen(!open)}>
