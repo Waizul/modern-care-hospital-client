@@ -158,15 +158,15 @@ const Navbar = ({ open, setOpen }) => {
                   <span>{user.displayName}</span>
                 </AvatarContainer>
               </Link>
-              <Button onClick={logOut}>Log out</Button>
+              <Button red onClick={logOut}>Log out</Button>
             </>
           ) : (
             <>
               <Link to="/register">
-                <Button>Register</Button>
+                <Button red>Register</Button>
               </Link>
               <Link to="/login">
-                <Button primary>Log In</Button>
+                <Button>Log In</Button>
               </Link>
             </>
           )}

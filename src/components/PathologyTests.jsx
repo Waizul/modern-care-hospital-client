@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Heading, Link } from "../globalStyles";
+import { ButtonP, ButtonTr, Heading, Link } from "../globalStyles";
 import { laptop, tablet } from "../responsive";
 
 import { pathologyTests, } from "../data";
@@ -24,13 +24,14 @@ const PathologyTests = () => {
   return (
     <Container id="pathology">
     <Heading>Our Patholgy</Heading>
-    <Link to="/pathology">
+
       <Wrapper>
         {pathologyTests.map((test) => (
           <PathologyTest test={test} key={test.id} />
         ))}
       </Wrapper>
-    </Link>
+    
+    <Link to="/patholgy"><ButtonP>See Details...</ButtonP></Link>
   </Container>
   )
 }

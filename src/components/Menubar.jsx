@@ -90,16 +90,16 @@ const Menubar = ({ open, setOpen }) => {
                 <span>{user.displayName}</span>
               </AvatarContainer>
             </Link>
-            <Button onClick={handleLogout}>Log out</Button>
+            <Button red onClick={handleLogout}>Log out</Button>
           </>
         ) : (
           <>
             <LoginContainer>
               <Link to="/register">
-                <Button onClick={() => setOpen(!open)}>Register</Button>
+                <Button red onClick={() => setOpen(!open)}>Register</Button>
               </Link>
               <Link to="/login">
-                <Button primary onClick={() => setOpen(!open)}>
+                <Button onClick={() => setOpen(!open)}>
                   Log In
                 </Button>
               </Link>

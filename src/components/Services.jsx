@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Heading, Link } from "../globalStyles";
+import { ButtonP, ButtonTr, Heading, Link } from "../globalStyles";
 import { laptop, tablet } from "../responsive";
 import Service from "./Service";
 import { servicesData } from "../data";
@@ -21,12 +21,15 @@ const Services = () => {
   return (
     <Container id="services">
       <Heading>Our Services</Heading>
+
+      <Wrapper>
+        {servicesData.map((service) => (
+          <Service service={service} key={service.id} />
+        ))}
+      </Wrapper>
+
       <Link to="/services">
-        <Wrapper>
-          {servicesData.map((service) => (
-            <Service service={service} key={service.id} />
-          ))}
-        </Wrapper>
+        <ButtonP>See Details...</ButtonP>
       </Link>
     </Container>
   );

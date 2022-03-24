@@ -100,14 +100,14 @@ const Register = () => {
             type="password"
             onBlur={(e) => setPassword2(e.target.value)}
           />
-          <Button onClick={handleInput}>Register</Button>
+          <Button red onClick={handleInput}>Register</Button>
           <Text>Already registered ?</Text>
           <Link to="/login">
             <Text className="new">Login here</Text>
           </Link>
         </Form>
         <Text>Or</Text>
-        <Button primary onClick={handleGoogleSignIn}>
+        <Button onClick={handleGoogleSignIn}>
           Sign in with google
         </Button>
       </Wrapper>

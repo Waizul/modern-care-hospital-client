@@ -84,11 +84,11 @@ const handleGoogleSignIn = () =>{
             type='password'
             onBlur={(e) => setPassword(e.target.value)}
           />
-          <Button primary onClick={handleInput}>Login</Button>
+          <Button onClick={handleInput}>Login</Button>
           <Text>Not registered ?</Text>
           <Link to='/register'><Text className='new'>Create a new account</Text  ></Link>
         </Form>
-        <Button primary onClick={handleGoogleSignIn}>Signin with google</Button>
+        <Button onClick={handleGoogleSignIn}>Signin with google</Button>
       </Wrapper>
     </Container>
   )

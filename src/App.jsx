@@ -37,72 +37,70 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-      <ScrollToTop/>
+        <ScrollToTop />
         <NavContainer>
           <Navbar open={open} setOpen={setOpen} />
           <Menubar open={open} setOpen={setOpen} />
         </NavContainer>
         <div>
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/appointment" element={<UserRoute><Appointment/></UserRoute>} />
-          <Route
-            path="/services"
-            element={
-              <UserRoute>
-                <ServicesList />
-              </UserRoute>
-            }
-            />
-          {/* <Route path="/services/:serviceId" element={<SingleService />} /> */}
-          <Route path="/doctors" element={<DoctorsList />} />
-          <Route path="/pathology" element={<Pathology />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-         
-          <Route
-            path="/dashboard"
-            element={
-              <UserRoute>
-                <Dashboard />
-              </UserRoute>
-            }>
-            <Route path="/dashboard" element={<DashboardHome />} />
-            <Route path="/dashboard/user" element={<UserDashboard />}>
-              <Route
-                path="/dashboard/user/appointments"
-                element={<UserAppoitments />}
-                />
-              <Route path="/dashboard/user/review" element={<UserReview />} />
-            </Route>
+          <Routes>
+            <Route path="/" element={<Home />} />
+           
+            <Route path="/services" element={<ServicesList />} />
+            <Route path="/doctors" element={<DoctorsList />} />
+            <Route path="/pathology" element={<Pathology />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
             <Route
-              path="/dashboard/admin"
+              path="/appointment"
               element={
-                <AdminRoute>
-                  <AdminDashboard />
-                </AdminRoute>
+                <UserRoute>
+                  <Appointment />
+                </UserRoute>
+              }
+            />
+            <Route
+              path="/dashboard"
+              element={
+                <UserRoute>
+                  <Dashboard />
+                </UserRoute>
               }>
-              <Route
-                path="/dashboard/admin/AppointmentsList"
-                element={<AppointmentsList />}
+              <Route path="/dashboard" element={<DashboardHome />} />
+              <Route path="/dashboard/user" element={<UserDashboard />}>
+                <Route
+                  path="/dashboard/user/appointments"
+                  element={<UserAppoitments />}
                 />
+                <Route path="/dashboard/user/review" element={<UserReview />} />
+              </Route>
               <Route
-                path="/dashboard/admin/reviewsList"
-                element={<ReviewsList />}
+                path="/dashboard/admin"
+                element={
+                  <AdminRoute>
+                    <AdminDashboard />
+                  </AdminRoute>
+                }>
+                <Route
+                  path="/dashboard/admin/AppointmentsList"
+                  element={<AppointmentsList />}
                 />
-              <Route
-                path="/dashboard/admin/makeAdmin"
-                element={<MakeAdmin />}
+                <Route
+                  path="/dashboard/admin/reviewsList"
+                  element={<ReviewsList />}
                 />
-              <Route
-                path="/dashboard/admin/discountsList"
-                element={<DiscountsList />}
+                <Route
+                  path="/dashboard/admin/makeAdmin"
+                  element={<MakeAdmin />}
                 />
+                <Route
+                  path="/dashboard/admin/discountsList"
+                  element={<DiscountsList />}
+                />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
-                </div>
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </AuthProvider>
