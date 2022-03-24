@@ -1,16 +1,16 @@
 import styled from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Menubar from "./components/Menubar";
-import { useState } from "react";
 import Footer from "./components/Footer";
 import AuthProvider from "./context/AuthProvider";
 import Login from "./pages/Login";
 import ServicesList from "./pages/ServicesList";
+import Lab from './pages/Lab';
 import DoctorsList from "./pages/DoctorsList";
-import Pathology from "./pages/Pathology";
 import Register from "./pages/Register";
 import UserRoute from "./pages/dashboard/user/UserRoute";
 import Dashboard from "./pages/dashboard/Dashboard";
@@ -48,7 +48,7 @@ function App() {
            
             <Route path="/services" element={<ServicesList />} />
             <Route path="/doctors" element={<DoctorsList />} />
-            <Route path="/pathology" element={<Pathology />} />
+            <Route path="/lab" element={<Lab />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route

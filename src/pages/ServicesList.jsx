@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import SingleService from "../components/SingleService";
+import { Heading } from "../globalStyles";
 import { laptop, tablet } from "../responsive";
 
 import servicesListData from "../servicesListData";
@@ -24,9 +25,10 @@ const Wrapper = styled.div`
   ${tablet({ gridTemplateColumns: "repeat(2, 1fr)", columnGap: ".5rem" })}
   ${laptop({ gridTemplateColumns: "repeat(3, 1fr)", columnGap: "1rem" })}
 `;
-const Title = styled.h1`
+const Title = styled(Heading)`
   text-align: center;
-  padding-top: 10px;
+  padding-top: 1rem;
+  padding-bottom: 0;
   color: rgb(28,105,63);
 `;
 

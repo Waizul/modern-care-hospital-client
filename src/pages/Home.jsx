@@ -1,8 +1,7 @@
-import { BrowserRouter } from 'react-router-dom'
 import Banner from '../components/Banner'
 import Contact from '../components/Contact'
 import Doctors from '../components/Doctors'
-import PathologyTests from '../components/PathologyTests'
+import LabFacilities from '../components/LabFacilities'
 import Services from '../components/Services'
 
 const Home = () => {
@@ -10,7 +9,7 @@ const Home = () => {
     <>
    <Banner/>
    <Services/>
-   <PathologyTests/>
+   <LabFacilities/>
    <Doctors/>
    <Contact/>
     </>

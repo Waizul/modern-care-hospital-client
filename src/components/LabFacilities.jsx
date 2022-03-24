@@ -3,7 +3,7 @@ import { ButtonP, ButtonTr, Heading, Link } from "../globalStyles";
 import { laptop, tablet } from "../responsive";
 
 import { pathologyTests, } from "../data";
-import PathologyTest from "./PathologyTest";
+import LabFacilty from "./LabFacility";
 
 const Container = styled.div`
   padding-top: 120px;
@@ -20,20 +20,20 @@ const Wrapper = styled.div`
 
 
 
-const PathologyTests = () => {
+const LabFacilities = () => {
   return (
     <Container id="pathology">
-    <Heading>Our Patholgy</Heading>
+    <Heading>Our Lab Facilities</Heading>
 
       <Wrapper>
         {pathologyTests.map((test) => (
-          <PathologyTest test={test} key={test.id} />
+          <LabFacilty test={test} key={test.id} />
         ))}
       </Wrapper>
     
-    <Link to="/patholgy"><ButtonP>See Details...</ButtonP></Link>
+    <Link to="/lab"><ButtonP>See Details...</ButtonP></Link>
   </Container>
   )
 }
 
-export default PathologyTests
+export default LabFacilities

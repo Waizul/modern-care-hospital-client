@@ -31,7 +31,7 @@ const Doctors = () => {
         ))}
       </Wrapper>
 
-      <Link to="/services">
+      <Link to="/doctors">
         <ButtonP>See More...</ButtonP>
       </Link>
     </Container>

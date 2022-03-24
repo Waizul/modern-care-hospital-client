@@ -25,7 +25,7 @@ width: 80%;
 margin: 0 auto;
 `;
 
-const PathologyTest = ({test}) => {
+const LabFacilty = ({test}) => {
   return (
     <Container>
       <Image src={test.img} alt={test.name} />
@@ -35,4 +35,4 @@ const PathologyTest = ({test}) => {
   )
 }
 
-export default PathologyTest
+export default LabFacilty
